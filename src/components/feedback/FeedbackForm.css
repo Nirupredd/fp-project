@@ -1,0 +1,256 @@
+.feedback-container {
+  padding: 2rem 0;
+}
+
+.feedback-card {
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.dark-mode .feedback-card {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 4px 20px var(--dark-shadow);
+}
+
+.dark-mode .feedback-card label,
+.dark-mode .feedback-card p,
+.dark-mode .feedback-card h2,
+.dark-mode .feedback-card h3 {
+  color: #ffffff;
+}
+
+.feedback-header {
+  background-color: rgb(135, 4, 4);
+  color: white;
+  padding: 2rem;
+  border-bottom: none;
+}
+
+.dark-mode .feedback-header {
+  background-color: var(--dark-accent);
+  color: white;
+}
+
+.feedback-header h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feedback-header p {
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+.submit-button {
+  background-color: rgb(135, 4, 4);
+  border-color: rgb(135, 4, 4);
+  padding: 0.75rem;
+}
+
+.dark-mode .submit-button {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background-color: rgb(110, 3, 3);
+  border-color: rgb(110, 3, 3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(135, 4, 4, 0.4);
+  box-shadow: 0 0 0 0.25rem rgba(135, 4, 4, 0.25);
+}
+
+/* Rating stars */
+.rating-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.rating-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating-star {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rating-star:hover,
+.rating-star.selected {
+  color: rgb(135, 4, 4);
+  transform: scale(1.1);
+}
+
+.rating-label {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  color: #666;
+}
+
+.anonymous-checkbox {
+  font-weight: 500;
+}
+
+/* Student feedback specific styles */
+.student-feedback-note {
+  background-color: rgba(135, 4, 4, 0.05);
+  border-left: 3px solid rgb(135, 4, 4);
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.dark-mode .student-feedback-note {
+  background-color: rgba(255, 82, 82, 0.1);
+  border-left: 3px solid var(--dark-accent);
+}
+
+/* Feedback View Styles */
+.feedback-table th {
+  background-color: rgb(135, 4, 4);
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+
+.dark-mode .feedback-table th {
+  background-color: var(--dark-accent);
+  color: white;
+}
+
+.feedback-table td {
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+}
+
+.feedback-message {
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-value {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.rating-stars {
+  display: flex;
+}
+
+.star {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.star.filled {
+  color: rgb(135, 4, 4);
+}
+
+.dark-mode .star.filled {
+  color: var(--dark-accent);
+}
+
+/* Custom badge colors for feedback types */
+.badge.bg-purple {
+  background-color: #6f42c1 !important;
+}
+
+.badge.bg-teal {
+  background-color: #20c997 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedback-card {
+    border-radius: 0;
+  }
+
+  .feedback-header {
+    padding: 1.5rem;
+  }
+
+  .feedback-container {
+    padding: 0;
+  }
+
+  .rating-container {
+    justify-content: space-between;
+  }
+
+  .rating-item {
+    width: 18%;
+  }
+
+  .rating-star {
+    font-size: 1.8rem;
+  }
+
+  .rating-label {
+    font-size: 0.7rem;
+  }
+
+  .feedback-table {
+    font-size: 0.9rem;
+  }
+
+  .feedback-message {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .rating-container {
+    gap: 0.5rem;
+  }
+
+  .rating-star {
+    font-size: 1.5rem;
+  }
+
+  .rating-label {
+    font-size: 0.65rem;
+  }
+
+  .feedback-table {
+    font-size: 0.8rem;
+  }
+
+  .feedback-message {
+    max-width: 150px;
+  }
+
+  .star {
+    font-size: 0.9rem;
+  }
+}

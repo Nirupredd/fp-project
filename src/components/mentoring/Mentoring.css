@@ -1,0 +1,249 @@
+.mentoring-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mentor List Styles */
+.mentor-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-card.assigned {
+  border-left: 5px solid #28a745;
+}
+
+.mentor-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.mentor-bio {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Student Card Styles */
+.student-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.student-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* Query Styles */
+.query-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.query-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.query-preview {
+  max-height: 80px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.query-text, .response-text {
+  white-space: pre-line;
+}
+
+/* Tab Styles */
+.nav-tabs .nav-link {
+  font-weight: 500;
+  color: #495057;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  margin-right: 0.5rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-bottom: 3px solid #007bff;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid #e9ecef;
+}
+
+/* Dark Mode Styles */
+.dark-mode .mentor-card,
+.dark-mode .student-card,
+.dark-mode .query-card {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 4px 12px var(--dark-shadow);
+}
+
+.dark-mode .mentor-avatar {
+  background-color: var(--dark-accent);
+}
+
+.dark-mode .student-avatar {
+  background-color: #495057;
+}
+
+.dark-mode .query-text,
+.dark-mode .response-text {
+  background-color: var(--dark-bg-secondary) !important;
+  color: var(--dark-text-primary);
+}
+
+.dark-mode .nav-tabs .nav-link {
+  color: var(--dark-text-secondary);
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+  color: var(--dark-accent);
+  border-bottom: 3px solid var(--dark-accent);
+}
+
+.dark-mode .nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid var(--dark-border);
+}
+
+/* Mentoring Home Styles */
+.mentoring-home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mentoring-hero {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 2rem;
+}
+
+.mentoring-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.step-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.how-it-works h2 {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.how-it-works h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #007bff;
+}
+
+/* Dark Mode for Mentoring Home */
+.dark-mode .info-card,
+.dark-mode .step-card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text-primary);
+}
+
+.dark-mode .step-number {
+  background-color: var(--dark-accent);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .mentoring-container {
+    padding: 1rem;
+  }
+
+  .mentor-avatar, .student-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .mentoring-hero h1 {
+    font-size: 2rem;
+  }
+
+  .info-card, .step-card {
+    padding: 1.5rem;
+  }
+}

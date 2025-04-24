@@ -1,0 +1,167 @@
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.loading-spinner-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.loading-spinner-lg {
+  width: 80px;
+  height: 80px;
+}
+
+.loading-spinner div {
+  position: absolute;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(135, 4, 4);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading-spinner-sm div {
+  width: 8px;
+  height: 8px;
+}
+
+.loading-spinner-lg div {
+  width: 16px;
+  height: 16px;
+}
+
+.dark-mode .loading-spinner div {
+  background: var(--dark-accent);
+}
+
+.loading-spinner div:nth-child(1) {
+  left: 8px;
+  animation: loading-spinner1 0.6s infinite;
+}
+
+.loading-spinner div:nth-child(2) {
+  left: 8px;
+  animation: loading-spinner2 0.6s infinite;
+}
+
+.loading-spinner div:nth-child(3) {
+  left: 32px;
+  animation: loading-spinner2 0.6s infinite;
+}
+
+.loading-spinner div:nth-child(4) {
+  left: 56px;
+  animation: loading-spinner3 0.6s infinite;
+}
+
+.loading-spinner-sm div:nth-child(1) {
+  left: 6px;
+}
+
+.loading-spinner-sm div:nth-child(3) {
+  left: 20px;
+}
+
+.loading-spinner-sm div:nth-child(4) {
+  left: 34px;
+}
+
+.loading-spinner-lg div:nth-child(1) {
+  left: 10px;
+}
+
+.loading-spinner-lg div:nth-child(3) {
+  left: 40px;
+}
+
+.loading-spinner-lg div:nth-child(4) {
+  left: 70px;
+}
+
+@keyframes loading-spinner1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading-spinner3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loading-spinner2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.dark-mode .loading-text {
+  color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .loading-spinner-sm {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .loading-spinner-lg {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .loading-spinner div {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .loading-spinner-sm div {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .loading-spinner-lg div {
+    width: 13px;
+    height: 13px;
+  }
+  
+  .loading-text {
+    font-size: 0.85rem;
+  }
+}

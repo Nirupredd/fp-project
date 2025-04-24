@@ -1,12 +1,472 @@
-.companies-container {
-    display: flex;
+/* Main container styles */
+.companies-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Header section styles */
+.companies-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: var(--light-bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--light-shadow);
+}
+
+.dark-mode .companies-header {
+  background-color: var(--dark-bg-secondary);
+  box-shadow: 0 2px 4px var(--dark-shadow);
+}
+
+.companies-header h1 {
+  color: var(--light-accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .companies-header h1 {
+  color: var(--dark-accent);
+}
+
+.companies-header p {
+  color: var(--light-text-secondary);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.dark-mode .companies-header p {
+  color: var(--dark-text-secondary);
+}
+
+/* Grid layout for company cards */
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Company card styles */
+.company-card {
+  background-color: var(--light-card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--light-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dark-mode .company-card {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 4px 8px var(--dark-shadow);
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--light-shadow);
+}
+
+.dark-mode .company-card:hover {
+  box-shadow: 0 8px 16px var(--dark-shadow);
+}
+
+/* Logo container styles */
+.company-logo-container {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: var(--light-bg-secondary);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.dark-mode .company-logo-container {
+  background-color: var(--dark-bg-secondary);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.company-logo {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* Company info styles */
+.company-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode .company-info h3,
+.dark-mode .company-info p {
+  color: #ffffff;
+}
+
+.company-info h3 {
+  color: rgb(135, 4, 4);
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.company-info p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Placement statistics section */
+.placement-stats {
+  background-color: #f9f9f9;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+
+.placement-stats h2 {
+  text-align: center;
+  color: rgb(135, 4, 4);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.stats-description {
+  text-align: center;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.8rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 200px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid rgb(135, 4, 4);
+}
+
+.stat-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+  font-size: 2.2rem;
+  color: rgb(135, 4, 4);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.stat-item h3 {
+  color: rgb(135, 4, 4);
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.stat-item p {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.stat-trend {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stat-trend.up {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.stat-trend.down {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+/* Sector statistics */
+.stats-highlight {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stats-highlight h3 {
+  color: rgb(135, 4, 4);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.sector-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sector-item {
+  display: flex;
+  align-items: center;
+}
+
+.sector-label {
+  width: 180px;
+  font-weight: 600;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.sector-bar {
+  flex-grow: 1;
+  height: 30px;
+  background-color: #e9ecef;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sector-fill {
+  height: 100%;
+  background-color: rgb(135, 4, 4);
+  border-radius: 15px;
+  transition: width 1s ease-in-out;
+}
+
+.sector-value {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Responsive adjustments */
+@media (max-width: 992px) {
+  .companies-page {
+    padding: 1.5rem;
+  }
+
+  .companies-header {
+    margin-bottom: 2rem;
+  }
+
+  .companies-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .companies-grid {
+    gap: 1.5rem;
+  }
+
+  .company-logo-container {
+    height: 130px;
+  }
+
+  .stat-item h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .companies-page {
+    padding: 1rem;
+  }
+
+  .companies-header {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .companies-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .companies-header p {
+    font-size: 1rem;
+  }
+
+  .companies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .stats-container {
     flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
-  
-  .company-image {
-    display: block;
+
+  .stat-item {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    max-width: 300px;
   }
-  
+
+  .sector-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .sector-label {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+
+  .placement-stats {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .stats-highlight {
+    padding: 1.5rem;
+  }
+
+  .placement-stats h2 {
+    font-size: 1.8rem;
+  }
+
+  .stats-highlight h3 {
+    font-size: 1.5rem;
+  }
+
+  .company-logo-container {
+    height: 120px;
+    padding: 1.25rem;
+  }
+
+  .company-info {
+    padding: 1.25rem;
+  }
+
+  .company-info h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .companies-page {
+    padding: 0.75rem;
+  }
+
+  .companies-header {
+    margin-bottom: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .companies-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .companies-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .company-card {
+    max-width: 100%;
+  }
+
+  .company-logo-container {
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .companies-header p {
+    font-size: 0.9rem;
+  }
+
+  .stat-item {
+    padding: 1.2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.8rem;
+  }
+
+  .stat-icon {
+    font-size: 1.8rem;
+  }
+
+  .stat-item p {
+    font-size: 1rem;
+  }
+
+  .sector-bar {
+    height: 24px;
+  }
+
+  .sector-value {
+    font-size: 0.8rem;
+  }
+
+  .stats-description {
+    font-size: 0.9rem;
+  }
+
+  .placement-stats {
+    padding: 1.25rem;
+  }
+
+  .stats-highlight {
+    padding: 1.25rem;
+  }
+
+  .placement-stats h2 {
+    font-size: 1.6rem;
+  }
+
+  .stats-highlight h3 {
+    font-size: 1.3rem;
+  }
+
+  .sector-label {
+    font-size: 0.9rem;
+  }
+}

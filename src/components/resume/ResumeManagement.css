@@ -1,0 +1,215 @@
+.resume-management-container {
+  padding: 2rem 0;
+}
+
+.resume-management-card {
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.resume-management-header {
+  background-color: rgb(135, 4, 4);
+  color: white;
+  padding: 2rem;
+  border-bottom: none;
+}
+
+.resume-management-header h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.resume-management-header p {
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+.resume-table th {
+  background-color: rgb(135, 4, 4);
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+
+.dark-mode .resume-table th {
+  background-color: var(--dark-accent);
+  color: white;
+}
+
+.resume-table td {
+  vertical-align: middle;
+  padding: 0.75rem;
+}
+
+/* Resume details modal styling */
+.resume-details .detail-group {
+  margin-bottom: 1.5rem;
+}
+
+.resume-details .detail-group h6 {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: rgb(135, 4, 4);
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.dark-mode .resume-details .detail-group h6 {
+  color: var(--dark-accent);
+  border-bottom-color: #444;
+}
+
+.resume-details .detail-item {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.resume-details .detail-label {
+  font-weight: 500;
+  width: 120px;
+  color: #555;
+}
+
+.dark-mode .resume-details .detail-label {
+  color: #ccc;
+}
+
+.resume-details .detail-value {
+  flex: 1;
+}
+
+.resume-details .cover-letter-box {
+  white-space: pre-line;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+}
+
+.dark-mode .resume-details .cover-letter-box {
+  background-color: #333 !important;
+  border-color: #444;
+}
+
+.resume-file-section {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.dark-mode .resume-file-section {
+  background-color: #333;
+  border-color: #444;
+}
+
+.resume-file-section .file-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: rgb(135, 4, 4);
+}
+
+.dark-mode .resume-file-section .file-icon {
+  color: var(--dark-accent);
+}
+
+.resume-file-section .file-name {
+  font-weight: 500;
+}
+
+.resume-status-bar {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.dark-mode .resume-status-bar {
+  background-color: #333;
+  border-color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .resume-management-container {
+    padding: 1.5rem 0;
+  }
+  
+  .resume-management-header {
+    padding: 1.5rem;
+  }
+  
+  .status-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-management-container {
+    padding: 1rem 0;
+  }
+  
+  .resume-management-header {
+    padding: 1.25rem;
+  }
+  
+  .resume-management-card {
+    border-radius: 0;
+  }
+  
+  .resume-details .detail-item {
+    flex-direction: column;
+  }
+  
+  .resume-details .detail-label {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .resume-status-bar {
+    padding: 0.75rem;
+  }
+  
+  .resume-status-bar .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .status-actions {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .resume-management-container {
+    padding: 0.5rem 0;
+  }
+  
+  .resume-management-header {
+    padding: 1rem;
+  }
+  
+  .resume-management-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .resume-file-section {
+    padding: 0.75rem;
+  }
+  
+  .resume-file-section .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .resume-file-section button {
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+}

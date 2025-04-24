@@ -1,0 +1,173 @@
+.login-modal .modal-content {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 15px var(--light-shadow);
+}
+
+.dark-mode .login-modal .modal-content {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 5px 15px var(--dark-shadow);
+}
+
+.login-modal .modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.login-modal .modal-title {
+  color: var(--light-accent);
+  font-weight: 600;
+}
+
+.dark-mode .login-modal .modal-title {
+  color: var(--dark-accent);
+}
+
+.login-modal .modal-footer {
+  border-top: none;
+  padding-top: 0;
+}
+
+.login-modal .btn-primary {
+  background-color: var(--light-accent);
+  border-color: var(--light-accent);
+}
+
+.login-modal .btn-primary:hover,
+.login-modal .btn-primary:focus {
+  background-color: var(--light-accent-hover);
+  border-color: var(--light-accent-hover);
+}
+
+.dark-mode .login-modal .btn-primary {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+.dark-mode .login-modal .btn-primary:hover,
+.dark-mode .login-modal .btn-primary:focus {
+  background-color: var(--dark-accent-hover);
+  border-color: var(--dark-accent-hover);
+}
+
+.login-modal .btn-link {
+  color: var(--light-accent);
+  text-decoration: none;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.login-modal .btn-link:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .login-modal .btn-link {
+  color: var(--dark-accent);
+}
+
+.dark-mode .login-modal .btn-link:hover {
+  text-decoration: underline;
+}
+
+.role-selector {
+  margin-bottom: 1.5rem;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.role-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  z-index: 10;
+}
+
+.input-with-icon .form-control {
+  padding-left: 35px;
+}
+
+.role-info-box {
+  background-color: #f0f7ff;
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.role-info-header {
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.role-info-content {
+  padding: 1rem;
+}
+
+.role-info-content p {
+  margin-bottom: 0.5rem;
+  color: #004085;
+}
+
+.role-info-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.role-info-content li {
+  margin-bottom: 0.25rem;
+  color: #495057;
+}
+
+.public-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  vertical-align: middle;
+}
+
+.login-modal .form-label {
+  font-weight: 500;
+}
+
+.login-modal .form-control:focus {
+  border-color: rgba(135, 4, 4, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(135, 4, 4, 0.25);
+}
+
+.faculty-note {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.faculty-note small {
+  font-size: 0.85rem;
+}

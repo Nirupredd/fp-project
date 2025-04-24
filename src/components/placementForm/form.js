@@ -1,18 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
-  const formSubmission = (details) => {
-    let submissions = JSON.parse(localStorage.getItem('formData')) || [];
-    submissions.push(details);
-    localStorage.setItem('formData', JSON.stringify(submissions));
-    reset();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+  const formSubmission = async (data) => {
+    try {
+      setLoading(true);
+      setError('');
+      setSuccess(false);
+
+      // Get user token from localStorage
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      if (!userInfo || !userInfo.token) {
+        throw new Error('You must be logged in to submit the form');
+      }
+
+      // Format data for API
+      const formattedData = {
+        ...data,
+        campus: data.campus === 'onCampus' ? 'On Campus' : 'Off Campus',
+        status: data.status === 'placed' ? 'Placed' :
+                data.status === 'notPlaced' ? 'Not Placed' : 'Internship',
+        companyType: 'Service Based' // Default value, can be updated if needed
+      };
+
+      // Send data to backend API
+      const response = await fetch('http://localhost:5000/api/placement-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        },
+        body: JSON.stringify(formattedData)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+
+      // Success
+      setSuccess(true);
+      reset();
+
+      // Redirect to placement data page after 2 seconds
+      setTimeout(() => {
+        navigate('/placementData');
+      }, 2000);
+
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
-  const { register, handleSubmit, formState: { errors },reset } = useForm();
   return (
     <div className="container d-flex mt-4 justify-content-center align-items-center min-vh-100 bg-light">
       <form onSubmit={handleSubmit(formSubmission)} className="w-100 p-4 bg-white shadow rounded">
         <h2 className="mb-4">Placement Form</h2>
+
+        {error && <div className="alert alert-danger mb-4">{error}</div>}
+        {success && <div className="alert alert-success mb-4">Form submitted successfully! Redirecting...</div>}
         <div className="row">
           <div className="mb-3 col-12 col-md-6">
             <label htmlFor="rollno" className="form-label">Roll No</label>
@@ -145,7 +201,9 @@ function Form() {
             {errors.package?.type === "required" && <div className="alert alert-warning mt-1">Package is required</div>}
           </div>
           <div className="col-12">
-            <button type="submit" className="btn btn-primary w-100">Submit</button>
+            <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+              {loading ? 'Submitting...' : 'Submit'}
+            </button>
           </div>
         </div>
       </form>

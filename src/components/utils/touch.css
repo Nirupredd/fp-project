@@ -1,0 +1,107 @@
+/* Touch-friendly improvements for mobile devices */
+
+/* Increase touch target sizes for better mobile usability */
+@media (max-width: 768px) {
+  /* Make buttons more touch-friendly */
+  button,
+  .btn,
+  .nav-link,
+  .dropdown-item,
+  input[type="checkbox"],
+  input[type="radio"],
+  .form-check-label {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase form control heights */
+  .form-control,
+  .input-group-text,
+  .custom-select {
+    min-height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Increase spacing between interactive elements */
+  .nav-item,
+  .list-group-item,
+  .dropdown-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* Improve tap targets in tables */
+  td, th {
+    padding: 12px 8px;
+  }
+}
+
+/* Add active state styling for touch feedback */
+.touch-feedback:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+  transition: transform 0.1s, opacity 0.1s;
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .nav-item:hover,
+  .nav-link:hover,
+  .dropdown-item:hover,
+  .btn:hover,
+  .theme-toggle-btn:hover,
+  .theme-toggle-btn:hover i {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+/* Improve scrolling on touch devices */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* Prevent text selection on interactive elements for better touch experience */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Add pull-to-refresh styling */
+.pull-to-refresh {
+  position: relative;
+  overflow: hidden;
+}
+
+.pull-to-refresh::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+/* Improve tap highlight color */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for iOS input zoom */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}

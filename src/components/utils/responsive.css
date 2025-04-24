@@ -1,0 +1,370 @@
+/* Responsive Utility Classes */
+
+/* Responsive Layout Component Styles */
+.responsive-layout {
+  width: 100%;
+  min-height: 50vh;
+}
+
+.responsive-layout-header {
+  margin-bottom: 2rem;
+}
+
+.responsive-layout-content {
+  margin-bottom: 2rem;
+}
+
+.responsive-layout-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .responsive-layout-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .responsive-layout-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .responsive-layout-content {
+    margin-bottom: 1.5rem;
+  }
+
+  .responsive-layout-footer {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-layout-header {
+    margin-bottom: 1rem;
+  }
+
+  .responsive-layout-content {
+    margin-bottom: 1rem;
+  }
+
+  .responsive-layout-footer {
+    margin-top: 1rem;
+  }
+}
+
+/* Responsive containers */
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-sm {
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+/* Responsive spacing */
+.responsive-padding {
+  padding: 2rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-padding {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-padding {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-padding {
+    padding: 0.75rem;
+  }
+}
+
+/* Responsive margins */
+.responsive-margin {
+  margin: 2rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-margin {
+    margin: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-margin {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-margin {
+    margin: 0.75rem;
+  }
+}
+
+/* Responsive flex utilities */
+.responsive-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.responsive-flex-col-lg {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .responsive-flex-col-lg {
+    flex-direction: column;
+  }
+}
+
+.responsive-flex-col-md {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex-col-md {
+    flex-direction: column;
+  }
+}
+
+/* Responsive grid */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Responsive text alignment */
+.text-center-sm {
+  text-align: left;
+}
+
+@media (max-width: 576px) {
+  .text-center-sm {
+    text-align: center;
+  }
+}
+
+/* Responsive font sizes */
+.responsive-title {
+  font-size: 2.5rem;
+}
+
+.responsive-subtitle {
+  font-size: 1.8rem;
+}
+
+.responsive-text {
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-title {
+    font-size: 2.2rem;
+  }
+
+  .responsive-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-title {
+    font-size: 2rem;
+  }
+
+  .responsive-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-title {
+    font-size: 1.8rem;
+  }
+
+  .responsive-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .responsive-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive visibility */
+@media (max-width: 576px) {
+  .hide-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
+/* Show only on specific breakpoints */
+.show-xs {
+  display: none !important;
+}
+
+.show-sm {
+  display: none !important;
+}
+
+.show-md {
+  display: none !important;
+}
+
+.show-lg {
+  display: none !important;
+}
+
+@media (max-width: 576px) {
+  .show-xs {
+    display: block !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .show-sm {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .show-md {
+    display: block !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .show-lg {
+    display: block !important;
+  }
+}
+
+/* Responsive images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-responsive-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-responsive-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive cards */
+.responsive-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-card {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive tables */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for iOS 100vh issue */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}

@@ -1,0 +1,243 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: var(--light-bg-secondary);
+}
+
+.dark-mode .auth-container {
+  background-color: var(--dark-bg-primary);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: var(--light-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--light-shadow);
+}
+
+.dark-mode .auth-card {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 4px 12px var(--dark-shadow);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--light-accent);
+}
+
+.dark-mode .auth-card h2 {
+  color: var(--dark-accent);
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: rgb(135, 4, 4);
+  border-color: rgb(135, 4, 4);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: rgb(100, 3, 3);
+  border-color: rgb(100, 3, 3);
+}
+
+.auth-card a {
+  color: var(--light-accent);
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .auth-card a {
+  color: var(--dark-accent);
+}
+
+.dark-mode .auth-card a:hover {
+  text-decoration: underline;
+}
+
+/* Role selector styling */
+.role-selector {
+  background-color: var(--light-bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.dark-mode .role-selector {
+  background-color: var(--dark-bg-secondary);
+}
+
+.role-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.role-button {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--light-border);
+  border-radius: 8px;
+  background-color: var(--light-card-bg);
+  color: var(--light-text-secondary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode .role-button {
+  border: 2px solid var(--dark-border);
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text-secondary);
+}
+
+.role-button:hover {
+  border-color: rgba(135, 4, 4, 0.5);
+  color: var(--light-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--light-shadow);
+}
+
+.dark-mode .role-button:hover {
+  border-color: rgba(255, 82, 82, 0.5);
+  color: var(--dark-accent);
+  box-shadow: 0 4px 8px var(--dark-shadow);
+}
+
+.role-button.active {
+  border-color: var(--light-accent);
+  background-color: rgba(135, 4, 4, 0.05);
+  color: var(--light-accent);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(135, 4, 4, 0.1);
+}
+
+.dark-mode .role-button.active {
+  border-color: var(--dark-accent);
+  background-color: rgba(255, 82, 82, 0.1);
+  color: var(--dark-accent);
+  box-shadow: 0 4px 12px var(--dark-shadow);
+}
+
+.input-group-text {
+  background-color: var(--light-accent);
+  color: white;
+  border-color: var(--light-accent);
+}
+
+.dark-mode .input-group-text {
+  background-color: var(--dark-accent);
+  color: white;
+  border-color: var(--dark-accent);
+}
+
+/* Faculty note styling */
+.faculty-note {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background-color: var(--light-bg-secondary);
+  border: 1px solid var(--light-border);
+  margin-top: 1rem;
+}
+
+.dark-mode .faculty-note {
+  background-color: var(--dark-bg-secondary);
+  border: 1px solid var(--dark-border);
+}
+
+.faculty-note small {
+  font-size: 0.85rem;
+  color: var(--light-text-secondary);
+}
+
+.dark-mode .faculty-note small {
+  color: var(--dark-text-secondary);
+}
+
+.role-info {
+  background-color: var(--light-bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dark-mode .role-info {
+  background-color: var(--dark-bg-secondary);
+}
+
+.role-info p {
+  font-weight: 500;
+  color: var(--light-text-secondary);
+  margin-bottom: 0;
+}
+
+.dark-mode .role-info p {
+  color: var(--dark-text-secondary);
+}
+
+.role-info .alert {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .role-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .role-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1rem;
+  }
+
+  .auth-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .role-selector {
+    padding: 0.75rem;
+  }
+
+  .input-group-text {
+    padding: 0.375rem 0.5rem;
+  }
+
+  .form-control {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
